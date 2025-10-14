@@ -1,0 +1,31 @@
+public class RestCountriesSimple {
+    public static void getCountries() {
+        Http http = new Http();
+        HttpRequest request = new HttpRequest();
+        
+
+        request.setEndpoint('https://restcountries.com/v3.1/all?fields=name,capital');
+        request.setMethod('GET');
+        request.setHeader('Content-Type', 'application/json');
+
+        HttpResponse response = http.send(request);
+        System.debug('Status Code: ' + response.getStatusCode());
+
+        if (response.getStatusCode() == 200) {
+            List<Object> countries = (List<Object>) JSON.deserializeUntyped(response.getBody());
+
+            for (Integer i = 0; i < Math.min(5, countries.size()); i++) {
+                Map<String, Object> country = (Map<String, Object>) countries[i];
+                Map<String, Object> nameInfo = (Map<String, Object>) country.get('name');
+                String name = (String) nameInfo.get('common');
+                
+                List<Object> capitals = (List<Object>) country.get('capital');
+                String capital = (capitals != null && capitals.size() > 0) ? (String) capitals[0] : 'No capital';
+                
+                System.debug('Country: ' + name + ' | Capital: ' + capital);
+            }
+        } else {
+            System.debug('Error Response: ' + response.getBody());
+        }
+    }
+}
