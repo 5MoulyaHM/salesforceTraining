@@ -1,0 +1,206 @@
+.container {
+    background: #f8f9fb;
+    padding: 1.5rem;
+}
+ 
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.header h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+ 
+.subtext {
+    font-size: 14px;
+    color: #6b7280;
+}
+ 
+.add-btn {
+    --sds-c-button-brand-color-background: #2563eb;
+}
+ 
+
+.dotted-wrapper {
+    border: 2px dotted #2563eb;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+ 
+.stat-card {
+    background: #ffffff;
+    width: 23%;
+    padding: 14px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.2s ease;
+}
+ 
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.15);
+}
+ 
+
+.stat-card.active {
+    border: 2px solid #2563eb;
+}
+ 
+
+.parallelogram {
+    display: inline-block;
+    padding: 6px 18px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    clip-path: polygon(0 0, 92% 0, 100% 100%, 0% 100%);
+}
+ 
+
+.stat-body h2 {
+    font-size: 26px;
+    margin: 4px 0;
+    color: #111827;
+}
+ 
+.stat-body span {
+    font-size: 12px;
+    color: #6b7280;
+}
+ 
+
+.blue {
+    background: #1d4ed8;
+}
+ 
+.light-blue {
+    background: #2563eb;
+}
+ 
+.green {
+    background: #22c55e;
+}
+ 
+.red {
+    background: #ef4444;
+}
+ 
+
+.tab-header {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+ 
+.tabs {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+ 
+.tabs li {
+    cursor: pointer;
+    padding-bottom: 8px;
+}
+ 
+
+.tab-item.active {
+    border-bottom: 2px solid #2563eb;
+    font-weight: bold;
+}
+ 
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+ 
+
+.summary-text {
+    margin: 10px 0;
+}
+ 
+.table-container {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+ 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+ 
+th,
+td {
+    padding: 10px;
+    font-size: 14px;
+}
+ 
+thead {
+    background: #f3f4f6;
+}
+ 
+tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+ 
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: bold;
+}
+ 
+.inprogress {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+ 
+.approved {
+    background: #dcfce7;
+    color: #166534;
+}
+ 
+.cancelled {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+ 
+.declined {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+ 
+.empty-state {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+}
+ 
+
+@media (max-width: 768px) {
+    .stat-card {
+        width: 100%;
+    }
+}

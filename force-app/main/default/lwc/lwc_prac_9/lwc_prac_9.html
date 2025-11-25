@@ -1,0 +1,14 @@
+<template>
+    <lightning-card icon-name="utility:email" title="sendemail">
+      
+        <lightning-input  label="enter to email address" onchange={captoadd}></lightning-input>
+         <lightning-input  label="enter to email subject" onchange={captsub}></lightning-input>
+          <lightning-input-rich-text label="enter email body" onchange={capbody}></lightning-input-rich-text>
+
+
+         
+<lightning-button label="send" variant="brand" icon-name="utility:message" onclick={sendmail}></lightning-button>
+
+    </lightning-card>
+    
+</template>

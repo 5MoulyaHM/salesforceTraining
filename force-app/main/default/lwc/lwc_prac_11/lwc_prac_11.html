@@ -1,0 +1,50 @@
+<template>
+    <lightning-card  title="ACCOUNT" icon-name="Standard:account">
+  
+        <lightning-input label="enter search text to search account name" type="search" onchange={capst}></lightning-input> <!--type search will give u a small magnifier -->
+
+   
+       <!-- <p><b>****************data in a visiting card********</b></p>
+
+        
+         //this is basically for wire a property 
+        <lightning-layout multiple-rows="true">
+    <template for:each={mou.data} for:item="ac">
+        <lightning-layout-item size="4" key={ac.Id} padding="around-small">
+            <div class="myBx">
+                <b> Account Name : </b>{ac.Name}<br/>
+                <b> Phone Number : </b>{ac.Phone}<br/>
+                <b> Industry : </b>{ac.Industry}<br/>
+                <b> Rating : </b>{ac.Rating}<br/> 
+            </div>
+        </lightning-layout-item>
+    </template>
+</lightning-layout>
+
+
+         <p><b>****************data in a DATA TABLE ********</b></p>
+         <lightning-datatable key-field={id} data={mou.data}  columns={columnn}  hide-checkbox-column="true">  
+         -->   
+<!--small i for ID --> 
+
+<p><b>Message: {sharukhkhan.data}</b></p>
+
+<template if:true={mydata}> <!--only if this data is true or if its there -->
+
+ <lightning-datatable key-field={id} data={mydata}  columns={columnn}  hide-checkbox-column="true"></lightning-datatable>
+
+ </template>
+
+ <template if:true={myerror}>
+
+    <b>AN ERROR OCCURED WHILE RETERIVING DATA FROM SALESFORCE . THE ERROR IS </b>{myerror} <p></p>
+    <b>PLEASE TRY LATER</b>
+ </template>
+<!-- my data is variable ,,  from whee its getting data ?= function-->
+
+
+        
+    </lightning-card>
+</template>
+
+

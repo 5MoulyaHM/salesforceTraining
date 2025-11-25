@@ -1,0 +1,61 @@
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    background: #f4f5f7;
+    padding: 40px 0;
+}
+
+.white-card {
+    background: white;
+    width: 75%;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e2e2e2;
+}
+
+.success-img {
+    width: 70px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.card-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.debit-card {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.details h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.label {
+    font-weight: 600;
+}
+
+.value.bold {
+    font-weight: 700;
+}

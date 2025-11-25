@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="lwc lds forms" icon-name="custom:custom15">
+       <p><b>*******************Record view form*---  Read only ***************</b></p>
+       <lightning-record-view-form record-id={recordId} object-api-name={obnam}>
+       <lightning-output-field field-name={Name}></lightning-output-field>
+       <lightning-output-field field-name={Phone}></lightning-output-field>
+       </lightning-record-view-form>
+
+
+    <p><b>*******************Record EDIT form---Edit only  ****************</b></p>
+       <lightning-record-edit-form record-id={recordId} object-api-name={obnam}>
+       <lightning-input-field field-name={Name}></lightning-input-field>
+       <lightning-input-field field-name={Phone}></lightning-input-field>
+       </lightning-record-edit-form>
+
+     <p><b>*******************Record EDIT form---read and Edit   ****************</b></p>
+       <lightning-record-form record-id={recordId} object-api-name={obnam} mode="view" layout-type = "Full">  <!--u can also give mode as[ readonly,view and edit ] , readonly when u dont wanna edit jst reading it // also u can give layout type as compact  -->
+        
+
+       </lightning-record-form>
+<!--so if in case u wann se and edit onlyt few field then -->
+
+   
+
+
+    </lightning-card>
+
+
+
+    
+</template>

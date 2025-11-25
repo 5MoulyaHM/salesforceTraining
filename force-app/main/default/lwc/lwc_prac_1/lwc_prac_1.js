@@ -12,3 +12,4 @@ export default class Lwc_prac_1 extends LightningElement {
         this.salary = 40000;
     }
 }
+

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Greater of 3 numbers" icon-name="utility:password">
+  <lightning-input label="enter ur first number" onchange={capnum1} value={num1}></lightning-input> 
+  <lightning-input label="enter ur second number" onchange={capnum2} value={num2}></lightning-input>  
+  <lightning-input label="enter ur third number" onchange={capnum3} value={num3}></lightning-input> 
+  <lightning-button label="calculate" variant="success" icon-name="utility:product_quantity_rules" onclick={calcme}></lightning-button>
+  <lightning-button label="clear" variant="destructive" icon-name="utility:push" onclick={clearme}></lightning-button>
+
+  <p><b>*******************output******************</b></p>
+  <b>There greater number is</b> {result}           
+  </lightning-card> 
+</template>  
+
+
+
+
+

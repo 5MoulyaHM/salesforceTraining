@@ -1,0 +1,28 @@
+
+<!--css handson-->
+<template>
+    
+   <div class="mybx">  
+     <b>ICICI BANK LOAN EMI CALCULATION </b>  <p></p> 
+     </div>
+     
+
+   <div class="mycard">
+    <lightning-card title="lwc css">
+        <lightning-input label="enter the loan amount" onchange={caploanamt}  style=" background-color: purple;  color: rgb(62, 141, 210);"></lightning-input> 
+            <lightning-input label="enter the loan tenure" onchange={caploanten}></lightning-input>
+                <lightning-input label="enter the loan rate of interest" onchange={caploanint}></lightning-input>
+
+           
+
+
+    <lightning-button label="calculate" icon-name="utility:heart" onclick={calcme} style=" background-color: purple;  color: aliceblue; width:150px; height: 100px;"></lightning-button>
+    <lightning-button label="clear" icon-name="utility:bug" onclick={clearme}></lightning-button>
+
+
+
+    </lightning-card>
+</div>
+
+    
+</template>

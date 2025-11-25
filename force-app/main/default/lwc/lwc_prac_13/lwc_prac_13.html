@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Account Search & Update" icon-name="standard:account">
+
+        <lightning-input 
+            label="Search Account Name"
+            type="search"
+            onchange={capst}>
+        </lightning-input>
+
+        <template if:true={mydata}>
+            <lightning-datatable
+                key-field="Id"
+                data={mydata}
+                columns={columnn}
+                draft-values={draftValues}
+                hide-checkbox-column="true"
+                onsave={handleSave}>
+            </lightning-datatable>
+        </template>
+
+        <template if:true={myerror}>
+            <p style="color:red">Error loading Accounts: {myerror}</p>
+        </template>
+
+    </lightning-card>
+</template>

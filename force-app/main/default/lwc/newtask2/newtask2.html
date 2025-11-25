@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="LWC LDS WIRE" icon-name="utility:connect">
+        <p>Using wire service to get Account records</p>
+ 
+       
+            <lightning-datatable
+                key-field="Id"
+                data={accounts.data}
+                columns={columns}
+                hide-checkbox-column="false">
+            </lightning-datatable>
+       
+    </lightning-card>
+ 
+    <lightning-card title="LWC wire function" icon name="utility:bug">
+        <p>Using wire service to get Contact records</p>
+            <lightning-datatable
+                key-field="id"
+                data={contactList}
+                columns={contactColumns}
+                hide-checkbox-column="false"
+                draft-values={draftValues}
+                onsave={handleSave}>
+            </lightning-datatable>
+ 
+    </lightning-card>
+</template>
+
+

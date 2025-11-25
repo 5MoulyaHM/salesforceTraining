@@ -1,0 +1,41 @@
+<template>
+
+<!-- umm array to print exctly -->
+    <lightning-card title="array data">
+
+
+        <b>displaying the data line wise</b>
+        <p></p>
+
+    
+        <b>way 1 ........for each item  ********</b>
+        <template for:each={cities} for:item="ct">
+        <p key ={ct}>Happy morning {ct} </p>
+
+
+    </template>
+
+    <b>****** way 2 *****</b>
+
+    <template iterator:ct={cities}>
+        <p key={ct.value}> {ct.value} </p>
+    </template>
+   
+    
+    <P><b> ***** array of arryyyyyyssssss*********</b></P>
+    <template iterator:st={statect}>
+         <template iterator:ct={st.value}>
+        <p key={ct.value}> happy morning {ct.value} </p>
+         </template>
+        <p key={st.value}>***********************</p>
+    
+    
+  </template>
+     </lightning-card> 
+</template>
+
+
+  
+
+
+

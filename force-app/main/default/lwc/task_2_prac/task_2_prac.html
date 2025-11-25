@@ -1,0 +1,177 @@
+<template>
+    <div class="container">
+   
+        <div class="header">
+            <div>
+                <h1>My Clients</h1>
+                <p class="subtext">
+                    Please continue any account onboarding application or start a new application
+                </p>
+            </div>
+ 
+            <lightning-button
+                label="Add Application"
+                variant="brand"
+                icon-name="utility:add"
+                class="add-btn">
+            </lightning-button>
+        </div>
+
+        <div class="dotted-wrapper">
+            <div class="status-row">
+                
+                <div
+                    class={allCardClass}
+                    onclick={handleCardClick}
+                    data-status="ALL">
+                    <div class="parallelogram blue">
+                        All applications
+                    </div>
+ 
+                    <div class="stat-body">
+                        <h2>{allCount}</h2>
+                        <span>Since 1 August 2023</span>
+                    </div>
+                </div>
+ 
+                
+                <div
+                    class={inProgressCardClass}
+                    onclick={handleCardClick}
+                    data-status="IN_PROGRESS">
+                    <div class="parallelogram light-blue">
+                        In progress
+                    </div>
+ 
+                    <div class="stat-body">
+                        <h2>{inProgressCount}</h2>
+                        <span>Since 5 October 2023</span>
+                    </div>
+                </div>
+ 
+                
+                <div
+                    class={approvedCardClass}
+                    onclick={handleCardClick}
+                    data-status="APPROVED">
+                    <div class="parallelogram green">
+                        Approved
+                    </div>
+ 
+                    <div class="stat-body">
+                        <h2>{approvedCount}</h2>
+                        <span>Since 10 August 2023</span>
+                    </div>
+                </div>
+ 
+              
+                <div
+                    class={declinedCardClass}
+                    onclick={handleCardClick}
+                    data-status="DECLINED">
+                    <div class="parallelogram red">
+                        Declined
+                    </div>
+ 
+                    <div class="stat-body">
+                        <h2>{declinedCount}</h2>
+                        <span>Since 1 August 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="tab-header">
+            <ul class="tabs">
+                <li
+                    class={allTabClass}
+                    data-status="ALL"
+                    onclick={handleTabClick}>
+                    All applications
+                </li>
+                <li
+                    class={inProgressTabClass}
+                    data-status="IN_PROGRESS"
+                    onclick={handleTabClick}>
+                    In progress
+                </li>
+                <li
+                    class={approvedTabClass}
+                    data-status="APPROVED"
+                    onclick={handleTabClick}>
+                    Approved
+                </li>
+                <li
+                    class={declinedTabClass}
+                    data-status="DECLINED"
+                    onclick={handleTabClick}>
+                    Declined
+                </li>
+            </ul>
+ 
+            <div class="filter">
+                <lightning-button-icon
+                    icon-name="utility:filterList"
+                    alternative-text="Filter">
+                </lightning-button-icon>
+                <span>Filter</span>
+            </div>
+        </div>
+
+        <div class="summary-text">
+            <p>{summaryText}</p>
+        </div>
+ 
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Entity name</th>
+                        <th>Account Type</th>
+                        <th>Application Step</th>
+                        <th>Application tab</th>
+                        <th>Last edited</th>
+                        <th>Duration since opportunity created</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+ 
+                <tbody>
+                    <template if:true={hasApplications}>
+                        <template for:each={filteredApplications} for:item="app">
+                            <tr key={app.id}>
+                                <td>{app.entityName}</td>
+                                <td>{app.accountType}</td>
+                                <td>{app.step}</td>
+                                <td>{app.tab}</td>
+                                <td>{app.lastEdited}</td>
+                                <td>{app.duration}</td>
+                                <td>
+                                    <span class={app.badgeClass}>
+                                        {app.statusLabel}
+                                    </span>
+                                </td>
+                                <td>
+                                    <lightning-button-icon
+                                        icon-name="utility:chevronright"
+                                        alternative-text="Open application">
+                                    </lightning-button-icon>
+                                </td>
+                            </tr>
+                        </template>
+                    </template>
+ 
+                    <template if:false={hasApplications}>
+                        <tr>
+                            <td colspan="8" class="empty-state">
+                                No applications for this status.
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

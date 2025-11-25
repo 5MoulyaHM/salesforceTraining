@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Account Pagination">
+
+    
+        <lightning-datatable 
+            key-field="Id"
+            data={data}
+            columns={columns}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+
+
+        <div class="pagination">
+            <template for:each={pageNumbers} for:item="page">
+                <lightning-button
+                    key={page.id}
+                    label={page.number}
+                    variant={page.variant}
+                    data-page={page.number}
+                    onclick={goToPage}>
+                </lightning-button>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,42 @@
+<template>
+    <div class="main-wrapper">
+        <div class="white-card">
+
+            <div class="success-icon">
+                <img src={successIcon} class="success-img" />
+            </div>
+
+            <h1 class="title">Congratulations!</h1>
+            <p class="subtitle">Your Optimum Bank Account has been opened</p>
+
+            <div class="card-row">
+                <img src={cardImage} class="debit-card" />
+
+                <div class="details">
+                    <h2>Account Details</h2>
+
+                    <div class="row">
+                        <span class="label">Customer number</span>
+                        <span class="value">{customerNumber}</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">Account Number</span>
+                        <span class="value">{accountNumber}</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">Date account opened</span>
+                        <span class="value">{openedDate}</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">Account Funding Balance</span>
+                        <span class="value bold">{fundingBalance}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template>
